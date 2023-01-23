@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { Button, View , StyleSheet,ImageBackground} from 'react-native';
+import { Button, View , StyleSheet,ImageBackground,ScrollView} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Header from './componenet/header';
 import SearchBar from './componenet/SearchBar';
 import Items from './componenet/Items';
+import Article from './componenet/Article';
 
 function HomeScreen({ navigation }) {
   return (
@@ -22,9 +23,11 @@ function HomeScreen({ navigation }) {
 
 function ArticleScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
+    <ScrollView >
+      <Article title={"article 1"} desc={"description"}/>
+      <Article title={"article 2"} desc={"description ncnsnckncsclql xkqnxlq x lj pql n kqp n qùq,mclc  ,ls"}/>
+      <Article title={"article 3"} desc={"description"}/>
+    </ScrollView>
   );
 }
 
