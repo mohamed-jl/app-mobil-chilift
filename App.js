@@ -4,20 +4,19 @@ import { Button, View , StyleSheet,ImageBackground} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Header from './componenet/header';
-import Search from './componenet/Search';
 import SearchBar from './componenet/SearchBar';
 import Items from './componenet/Items';
 
 function HomeScreen({ navigation }) {
   return (
    
-    <ImageBackground style={styles.container} source={require("./images/background.jpg")}>
+    <View style={styles.container} >
       
        <Header/>
-       <SearchBar/>
+       
        <Items/>
      
-    </ImageBackground>
+    </View>
   );
 }
 
@@ -49,13 +48,14 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
+    <NavigationContainer >
+      <Drawer.Navigator style={{backgroundColor:'red'}} >
+        <Drawer.Screen name="Home" component={HomeScreen} options={{headerStyle:{backgroundColor:'red'}}} />
         <Drawer.Screen name="Article" component={ArticleScreen} />
         <Drawer.Screen name="Table" component={TableScreen} />
         <Drawer.Screen name="FeedBack" component={FeedbackScreen} />
       </Drawer.Navigator>
+
     </NavigationContainer>
   );
 }
@@ -63,11 +63,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container:{
     flex: 1, 
+    top:60,
     alignItems: 'center', 
     justifyContent: 'center',
     flexDirection:'column',
-  
-    
-
   }
 })

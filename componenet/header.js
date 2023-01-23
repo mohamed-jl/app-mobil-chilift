@@ -30,13 +30,5 @@ const styles= StyleSheet.create({
         width:210,
         marginHorizontal:75
 
-    },
-    txt:{
-        fontSize:18,
-        padding:4,
-        margin:0,
-        marginLeft:15,
-
-
     }
 })
