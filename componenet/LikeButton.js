@@ -3,7 +3,7 @@ import { View,Text,StyleSheet,Image,ScrollView,Button,TouchableOpacity } from 'r
 
 const LikeButton = () => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() =>{console.log('liked');}}>
         <View style={styles.container}>
             <Text style={{fontSize:22}}>❤️</Text>
         </View>
